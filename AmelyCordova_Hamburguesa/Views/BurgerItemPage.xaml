@@ -10,15 +10,18 @@
             <Label Text="AC_Nombre" />
             <Entry x:Name="ACnameB" Text="{Binding Name}" />
             <Label Text="AC_Descripción" />
+
             <Entry x:Name="ACdescB" Text="{Binding Description}" />
             <Label Text="AC_¿Con queso extra?" />
+
             <CheckBox x:Name="ACcheck"
-            CheckedChanged="AC_OnCheckBoxCheckedChanged" />
+            IsChecked="{Binding WithExtraCheese}" />
+
             <Button Text="AC_Guardar"
             Clicked="AC_OnSaveClicked" />
             <Button Text="AC_Cancelar"
             Clicked="AC_OnCancelClicked" />
-            </VerticalStackLayout>
+        </VerticalStackLayout>
     </ScrollView>
-    
+
 </ContentPage>
