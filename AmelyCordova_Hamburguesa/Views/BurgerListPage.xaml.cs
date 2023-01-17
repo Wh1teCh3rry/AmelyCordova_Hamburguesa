@@ -31,4 +31,15 @@ public partial class BurgerListPage : ContentPage
         await Shell.Current.GoToAsync(nameof(BurgerItemPage));
         base.OnAppearing();
     }
+
+    async void AC_CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        var selected = e.CurrentSelection[0] as Burger;
+        if (selected != null)
+        {
+            await Shell.Current.GoToAsync(nameof(BurgerItemPage));
+            base.OnAppearing();
+        }
+
+    }
 }

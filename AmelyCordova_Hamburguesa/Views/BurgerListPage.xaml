@@ -5,7 +5,9 @@
              x:Class="AmelyCordova_Hamburguesa.Views.BurgerListPage"
              Title="Amely Córdova BurgerListPage">
     <Grid RowDefinitions="*,Auto">
-        <CollectionView x:Name="ACburgerList">
+        <CollectionView x:Name="ACburgerList"
+                         SelectionMode="Single"
+                         SelectionChanged="AC_CollectionView_SelectionChanged">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:Burger">
                     <Grid>
