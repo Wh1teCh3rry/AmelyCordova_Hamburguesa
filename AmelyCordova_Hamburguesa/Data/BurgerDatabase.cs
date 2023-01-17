@@ -27,8 +27,19 @@ namespace AmelyCordova_Hamburguesa.Data
         public int AddNewBurger(Burger burger)
         {
             Init();
-            int result = conn.Insert(burger);
-            return result;
+            //Ya no necesito que los campos se muestren vacíos
+            //int result = conn.Insert(burger);
+            //return result;
+
+            //Valido si la hamburguesa existe, si sí se hace Update, sino se hace Insert
+            if (burger.Id != 0)
+            {
+                return conn.Update(burger);
+            }
+            else
+            {
+                return conn.Insert(burger);
+            }
         }
         public List<Burger> GetAllBurgers()
         {
