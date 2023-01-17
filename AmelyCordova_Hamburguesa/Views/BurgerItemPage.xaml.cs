@@ -1,33 +1,43 @@
+using AmelyCordova_Hamburguesa.Data;
 using AmelyCordova_Hamburguesa.Models;
 
 namespace AmelyCordova_Hamburguesa.Views;
 
+[QueryProperty("Item", "Item")]//propiedad que recibe el dato/el dato
+
 public partial class BurgerItemPage : ContentPage
 {
-    Burger Item = new Burger();
-    bool _flag;
+    public Burger Item
+    {
+        get => BindingContext as Burger;
+        set => BindingContext = value;
+    }
+
+    //Burger Item = new Burger();
+    //bool _flag;
 
     public BurgerItemPage()
-	{
-		InitializeComponent();
-	}
+    {
+        InitializeComponent();
+    }
 
-	private void AC_OnCheckBoxCheckedChanged(object sender, CheckedChangedEventArgs e)
+    /*private void AC_OnCheckBoxCheckedChanged(object sender, CheckedChangedEventArgs e)
 	{
         _flag = e.Value;
-	}
+	}*/
 
-	private void AC_OnSaveClicked(object sender, EventArgs e)
-	{
-        Item.Name = ACnameB.Text;
-        Item.Description = ACdescB.Text;
-        Item.WithExtraCheese = _flag;
+    private void AC_OnSaveClicked(object sender, EventArgs e)
+    {
+        //La actualización ya s erealiza en la parte de arriba
+        //Item.Name = ACnameB.Text;
+        //Item.Description = ACdescB.Text;
+        //Item.WithExtraCheese = _flag;
         App.BurgerRepo.AddNewBurger(Item);
         Shell.Current.GoToAsync("..");
     }
 
     private void AC_OnCancelClicked(object sender, EventArgs e)
-	{
+    {
         Shell.Current.GoToAsync("..");
     }
 }
