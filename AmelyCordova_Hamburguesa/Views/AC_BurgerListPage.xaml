@@ -9,14 +9,14 @@
                          SelectionMode="Single"
                          SelectionChanged="AC_CollectionView_SelectionChanged">
             <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="models:Burger">
+                <DataTemplate x:DataType="models:AC_Burger">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="2*" />
                         </Grid.ColumnDefinitions>
                         <Label Text="{Binding Id}" />
-                        <Label Grid.Column="1" Text="{Binding Name}" />
+                        <Label Grid.Column="1" Text="{Binding ACName}" />
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

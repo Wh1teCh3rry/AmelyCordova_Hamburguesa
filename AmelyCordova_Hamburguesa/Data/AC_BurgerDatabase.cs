@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 using AmelyCordova_Hamburguesa.Models;
 using SQLite;
 
-
 namespace AmelyCordova_Hamburguesa.Data
 {
-    public class BurgerDatabase
+    public class AC_BurgerDatabase
     {
         string _dbPath;
         private SQLiteConnection conn;
-        public BurgerDatabase(string DatabasePath)
+        public AC_BurgerDatabase(string DatabasePath)
         {
             _dbPath = DatabasePath;
         }
@@ -22,9 +21,9 @@ namespace AmelyCordova_Hamburguesa.Data
             if (conn != null)
                 return;
             conn = new SQLiteConnection(_dbPath);
-            conn.CreateTable<Burger>();
+            conn.CreateTable<AC_Burger>();
         }
-        public int AddNewBurger(Burger burger)
+        public int AC_AddNewBurger(AC_Burger burger)
         {
             Init();
             //Ya no necesito que los campos se muestren vacíos
@@ -41,17 +40,17 @@ namespace AmelyCordova_Hamburguesa.Data
                 return conn.Insert(burger);
             }
         }
-        public List<Burger> GetAllBurgers()
+        public List<AC_Burger> AC_GetAllBurgers()
         {
             Init();
-            List<Burger> burgers = conn.Table<Burger>().ToList();
+            List<AC_Burger> burgers = conn.Table<AC_Burger>().ToList();
             return burgers;
         }
 
-        public int AC_DeleteItem(Burger item)
+        public int AC_DeleteItem(AC_Burger burger)
         {
             Init();
-            return conn.Delete(item);
+            return conn.Delete(burger);
         }
     }
 }

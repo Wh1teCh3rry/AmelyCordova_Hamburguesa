@@ -4,9 +4,9 @@ namespace AmelyCordova_Hamburguesa;
 
 public partial class App : Application
 {
-	public static BurgerDatabase BurgerRepo { get; set; }
+	public static AC_BurgerDatabase BurgerRepo { get; set; }
 
-	public App(BurgerDatabase repo)
+	public App(AC_BurgerDatabase repo)
 	{
 		InitializeComponent();
 

@@ -7,9 +7,9 @@ namespace AmelyCordova_Hamburguesa.Views;
 
 public partial class BurgerItemPage : ContentPage
 {
-    public Burger Item
+    public AC_Burger Item
     {
-        get => BindingContext as Burger;
+        get => BindingContext as AC_Burger;
         set => BindingContext = value;
     }
 
@@ -32,12 +32,18 @@ public partial class BurgerItemPage : ContentPage
         //Item.Name = ACnameB.Text;
         //Item.Description = ACdescB.Text;
         //Item.WithExtraCheese = _flag;
-        App.BurgerRepo.AddNewBurger(Item);
+        App.BurgerRepo.AC_AddNewBurger(Item);
         Shell.Current.GoToAsync("..");
     }
 
     private void AC_OnCancelClicked(object sender, EventArgs e)
     {
+        Shell.Current.GoToAsync("..");
+    }
+
+    private void AC_OnDeleteClicked(object sender, EventArgs e)
+    {
+        App.BurgerRepo.AC_DeleteItem(Item);
         Shell.Current.GoToAsync("..");
     }
 }

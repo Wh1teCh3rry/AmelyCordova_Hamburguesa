@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AmelyCordova_Hamburguesa
 {
-    public class FileAccessHelper
+    public class AC_FileAccessHelper
     {
         public static string GetLocalFilePath(string filename)
         {
