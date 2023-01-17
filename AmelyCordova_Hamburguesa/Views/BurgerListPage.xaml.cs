@@ -41,10 +41,7 @@ public partial class BurgerListPage : ContentPage
         var selected = e.CurrentSelection[0] as Burger;
         if (selected != null)
         {
-            await Shell.Current.GoToAsync(nameof(BurgerItemPage), true, new Dictionary<string, object>
-            {
-                ["Item"] = new Burger()
-            });
+            await Shell.Current.GoToAsync(nameof(BurgerItemPage));
             base.OnAppearing();
         }
 
