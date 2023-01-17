@@ -10,7 +10,8 @@ public partial class BurgerListPage : ContentPage
         InitializeComponent();
         //List<Burger> burger = App.BurgerRepo.GetAllBurgers();
         //ACburgerList.ItemsSource = burger;
-        AC_LoadData();
+        //AC_LoadData();
+        BindingContext = this;
     }
 
     private void AC_LoadData()
@@ -26,9 +27,12 @@ public partial class BurgerListPage : ContentPage
         AC_LoadData();
     }
 
-    async void AC_OnItemAdded(object sender, EventArgs e)
+    public void AC_OnItemAdded(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync(nameof(BurgerItemPage));
+        Shell.Current.GoToAsync(nameof(BurgerItemPage), true, new Dictionary<string, object>
+        {
+            ["Item"] = new Burger()
+        });
         base.OnAppearing();
     }
 
@@ -37,7 +41,10 @@ public partial class BurgerListPage : ContentPage
         var selected = e.CurrentSelection[0] as Burger;
         if (selected != null)
         {
-            await Shell.Current.GoToAsync(nameof(BurgerItemPage));
+            await Shell.Current.GoToAsync(nameof(BurgerItemPage), true, new Dictionary<string, object>
+            {
+                ["Item"] = new Burger()
+            });
             base.OnAppearing();
         }
 
