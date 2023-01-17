@@ -47,5 +47,11 @@ namespace AmelyCordova_Hamburguesa.Data
             List<Burger> burgers = conn.Table<Burger>().ToList();
             return burgers;
         }
+
+        public int AC_DeleteItem(Burger item)
+        {
+            Init();
+            return conn.Delete(item);
+        }
     }
 }
