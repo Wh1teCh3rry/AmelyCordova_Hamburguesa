@@ -2,8 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:models="clr-namespace:AmelyCordova_Hamburguesa.Models"
-             x:Class="AmelyCordova_Hamburguesa.Views.BurgerListPage"
-             Title="Amely Córdova BurgerListPage">
+             x:Class="AmelyCordova_Hamburguesa.Views.AC_BurgerListPage"
+             Title="Amely Córdova AC_BurgerListPage">
     <Grid RowDefinitions="*,Auto">
         <CollectionView x:Name="ACburgerList"
                          SelectionMode="Single"

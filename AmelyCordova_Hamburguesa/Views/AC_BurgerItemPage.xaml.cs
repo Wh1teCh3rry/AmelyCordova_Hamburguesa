@@ -5,7 +5,7 @@ namespace AmelyCordova_Hamburguesa.Views;
 
 [QueryProperty("Item", "Item")]//propiedad que recibe el dato/el dato
 
-public partial class BurgerItemPage : ContentPage
+public partial class AC_BurgerItemPage : ContentPage
 {
     public AC_Burger Item
     {
@@ -16,7 +16,7 @@ public partial class BurgerItemPage : ContentPage
     //Burger Item = new Burger();
     //bool _flag;
 
-    public BurgerItemPage()
+    public AC_BurgerItemPage()
     {
         InitializeComponent();
     }

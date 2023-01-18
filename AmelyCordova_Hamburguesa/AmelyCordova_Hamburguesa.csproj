@@ -54,15 +54,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Views\AC_BurgerListPage.xaml.cs">
-	    <DependentUpon>AC_BurgerListPage.xaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="Views\AC_BurgerItemPage.xaml.cs">
-	    <DependentUpon>AC_BurgerItemPage.xaml</DependentUpon>
-	  </Compile>
-	</ItemGroup>
-
-	<ItemGroup>
 	  <MauiXaml Update="Views\AC_BurgerItemPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

@@ -8,7 +8,7 @@
 
     <ShellContent
         Title="Home"
-        ContentTemplate="{DataTemplate local:BurgerListPage}"
+        ContentTemplate="{DataTemplate local:AC_BurgerListPage}"
         Route="BurgerList" />
 
 </Shell>

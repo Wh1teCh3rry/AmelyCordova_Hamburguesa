@@ -23,7 +23,7 @@ namespace AmelyCordova_Hamburguesa.Data
             conn = new SQLiteConnection(_dbPath);
             conn.CreateTable<AC_Burger>();
         }
-        public int AC_AddNewBurger(AC_Burger burger)
+        public int AC_AddNewBurger(AC_Burger ACburger)
         {
             Init();
             //Ya no necesito que los campos se muestren vacíos
@@ -31,26 +31,26 @@ namespace AmelyCordova_Hamburguesa.Data
             //return result;
 
             //Valido si la hamburguesa existe, si sí se hace Update, sino se hace Insert
-            if (burger.Id != 0)
+            if (ACburger.Id != 0)
             {
-                return conn.Update(burger);
+                return conn.Update(ACburger);
             }
             else
             {
-                return conn.Insert(burger);
+                return conn.Insert(ACburger);
             }
         }
         public List<AC_Burger> AC_GetAllBurgers()
         {
             Init();
-            List<AC_Burger> burgers = conn.Table<AC_Burger>().ToList();
-            return burgers;
+            List<AC_Burger> ACburgers = conn.Table<AC_Burger>().ToList();
+            return ACburgers;
         }
 
-        public int AC_DeleteItem(AC_Burger burger)
+        public int AC_DeleteItem(AC_Burger ACburger)
         {
             Init();
-            return conn.Delete(burger);
+            return conn.Delete(ACburger);
         }
     }
 }
